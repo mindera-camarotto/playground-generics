@@ -5,9 +5,9 @@ enum MyError: Error {
 }
 
 class MyClass {
-    private var instances = [AnyObject]()
+    private var instances = [Any]()
 
-    func register<T>(_ instance: T) throws where T: AnyObject {
+    func register<T>(_ instance: T) throws where T: Any {
         if let _: T = resolve() {
             throw MyError.instanceAlreadyRegistered
         }
@@ -21,7 +21,7 @@ class MyClass {
 
 // Testing
 
-let one = MyClassOne()
+let one: MyProtocolOne = MyClassOne()
 let two = MyClassTwo()
 let six = MyClassSix()
 
