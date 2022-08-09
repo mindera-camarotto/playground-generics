@@ -1,40 +1,8 @@
 import Foundation
 
-// Protocols and classes
-
-protocol MyProtocolOne {
-    func printOne()
-}
-protocol MyProtocolTwo {
-    func printTwo()
-}
-protocol MyProtocolSix {
-    func printSix()
-}
-
-class MyClassOne: MyProtocolOne {
-    func printOne() {
-        print("One")
-    }
-}
-class MyClassTwo: MyProtocolTwo {
-    func printTwo() {
-        print("Two")
-    }
-}
-class MyClassSix: MyProtocolSix {
-    func printSix() {
-        print("Six")
-    }
-}
-
-// Error
-
 enum MyError: Error {
     case instanceAlreadyRegistered
 }
-
-// Main class
 
 class MyClass {
     private var instances = [AnyObject]()
